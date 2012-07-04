@@ -1,3 +1,5 @@
 build
+FlatWebView.xcodeproj/project.xcworkspace
+FlatWebView.xcodeproj/xcuserdata
 FlatWebView.xcodeproj/*.mode1v3
 FlatWebView.xcodeproj/*.pbxuser
