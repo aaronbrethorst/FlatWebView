@@ -21,20 +21,17 @@
 
 
 #import "FlatWebViewAppDelegate.h"
-#import "FlatWebView.h"
+#import "RootViewController.h"
 
 @implementation FlatWebViewAppDelegate
-
-@synthesize window;
+@synthesize rootViewController = _rootViewController;
+@synthesize window = _window;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{    
-    webView = [[FlatWebView alloc] initWithFrame:CGRectMake(0, 20, 320, 460)];
-	webView.scalesPageToFit = YES;
-	webView.backgroundColor = [UIColor colorWithRed:(241.0/255.0) green:(241.0/255.0) blue:(241.0/255.0) alpha:1.0];
-	[webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://cocoacontrols.com"]]];
-	
-	[self.window addSubview:webView];
+{
+    self.rootViewController = [[RootViewController alloc] initWithNibName:@"RootViewController" bundle:nil];
+    
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
     
     return YES;

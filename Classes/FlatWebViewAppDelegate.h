@@ -21,13 +21,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class FlatWebView;
+@class RootViewController;
 
 @interface FlatWebViewAppDelegate : NSObject <UIApplicationDelegate>
-{
-    UIWindow *window;
-	FlatWebView *webView;
-}
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property(strong, nonatomic) RootViewController *rootViewController;
+@property(strong, nonatomic) IBOutlet UIWindow *window;
 @end
 
