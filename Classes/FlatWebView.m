@@ -23,13 +23,34 @@
 
 @implementation FlatWebView
 
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    
+    if (self)
+    {
+        self.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+    }
+    
+    return self;
+}
+
+- (id)initWithCoder:(NSCoder*)coder
+{
+    self = [super initWithCoder:coder];
+    
+    if (self)
+    {
+        self.scrollView.decelerationRate = UIScrollViewDecelerationRateNormal;
+    }
+    return self;
+}
+
 - (void)layoutSubviews
 {
 	[super layoutSubviews];
     		
-    id scrollview = [self.subviews objectAtIndex:0];
-    
-    for (UIView *subview in [scrollview subviews])
+    for (UIView *subview in self.scrollView.subviews)
     {
         if ([subview isKindOfClass:[UIImageView class]])
         {
